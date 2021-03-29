@@ -7,6 +7,7 @@ webi \
   vim-spell \
   vim-ale \
   vim-prettier \
+  vim-shfmt \
   vim-whitespace \
   # done
 

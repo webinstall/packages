@@ -25,6 +25,7 @@ It includes many of the vim plugins available on webinstall.dev such as:
 - [vim-spell](/vim-spell)
 - [vim-ale](/vim-ale)
 - [vim-prettier](/vim-prettier)
+- [vim-shfmt](/vim-shfmt)
 - [vim-whitespace](/vim-whitespace)
 
 It **DOES NOT** include these, which you may also want:
