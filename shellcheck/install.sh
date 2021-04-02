@@ -4,9 +4,9 @@ function __init_shellcheck() {
     set -e
     set -u
 
-    ######################
+    ##################
     # Install shellcheck #
-    ######################
+    ##################
 
     # Every package should define these 6 variables
     pkg_cmd_name="shellcheck"
@@ -36,8 +36,8 @@ function __init_shellcheck() {
         #       website: https://www.shellcheck.net
 
         # This trims it down to just the version number:
-        #       0.99.9
-        echo $(shellcheck --version 2>/dev/null | head -n 2 | cut -d ' ' -f 2 | tail -n 1)
+        #       0.7.1
+        echo $(shellcheck --version 2>/dev/null | head -n 2 | cut -d ' ' -f 2 |tail -n 1)
     }
 
 }

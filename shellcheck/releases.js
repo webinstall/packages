@@ -4,6 +4,14 @@ var github = require('../_common/github.js');
 var owner = 'koalaman';
 var repo = 'shellcheck';
 
+/******************************************************************************/
+/** Note: Delete this Comment!                                               **/
+/**                                                                          **/
+/** Need a an example that filters out miscellaneous release files?          **/
+/**   See `deno`, `gitea`, or `caddy`                                        **/
+/**                                                                          **/
+/******************************************************************************/
+
 module.exports = function (request) {
   return github(request, owner, repo).then(function (all) {
     return all;

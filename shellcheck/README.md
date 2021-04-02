@@ -1,5 +1,3 @@
-## TO DO
-
 ---
 title: Foo Bar
 homepage: https://github.com/webinstall/foobar
