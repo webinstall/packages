@@ -1,35 +1,39 @@
 ---
-title: Foo Bar
-homepage: https://github.com/webinstall/foobar
+title: ShellCheck
+homepage: https://github.com/koalaman/shellcheck
 tagline: |
-  foobar: An example that doesn't exist.
+  ShellCheck - A shell script static analysis tool
 ---
 
-<!--
-    Note: Delete this comment section.
-
-    Need an example that has an **alias**? See `bat`.
-    Need a Windows example using **msvc**? See `bat`.
--->
-
-To update or switch versions, run `webi example@stable` (or `@v2`, `@beta`,
-etc).
+To update or switch versions, run `webi shellcheck@stable`, or `@vx.y.z` for a specific version.
 
 ## Cheat Sheet
 
-> `foo` doesn't exist and this text should have been replaced. It doesn't do
-> anything, but what it does is useful because it is; everybody knows it.
+> shellcheck catches rookie mistakes (and old-habits-die-hard mistakes) in bash
 
-To run foo:
-
-```bash
-foo
-```
-
-### Add Baz Highlighting
-
-To run foo with both bar and baz highlighting turned on:
+### Run shellcheck in your terminal:
 
 ```bash
-foo --bar=baz
+shellcheck yourscript
 ```
+
+<!---
+### Run shellcheck in your editor: 
+
+Include running shellcheck in editor? 
+
+It's just links to other linters or extensions
+-->
+
+### To use shellcheck in a build or test suite:
+
+Simply include shellcheck in the process. 
+
+```bash
+check-scripts:
+    # Fail if any of these files have warnings
+    shellcheck myscripts/*.sh
+```
+<!---
+Improve this as you need to!
+-->

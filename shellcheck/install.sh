@@ -4,9 +4,9 @@ function __init_shellcheck() {
     set -e
     set -u
 
-    ##################
+    ######################
     # Install shellcheck #
-    ##################
+    ######################
 
     # Every package should define these 6 variables
     pkg_cmd_name="shellcheck"
