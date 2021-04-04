@@ -35,8 +35,8 @@ IF (!(Test-Path -Path "$pkg_src_cmd"))
     pushd .local\tmp
 
         # Remove any leftover tmp cruft
-        Remove-Item -Path ".\foobar-v*" -Recurse -ErrorAction Ignore
-        Remove-Item -Path ".\foo.exe" -Recurse -ErrorAction Ignore
+        Remove-Item -Path ".\foobar-v*" -Recurse -ErrorAction Ignore | out-null
+        Remove-Item -Path ".\foo.exe" -Recurse -ErrorAction Ignore | out-null
 
         # NOTE: DELETE THIS COMMENT IF NOT USED
         # Move single binary into root of temporary folder
@@ -49,7 +49,7 @@ IF (!(Test-Path -Path "$pkg_src_cmd"))
 
         # Settle unpacked archive into place
         echo "Install Location: $pkg_src_cmd"
-        New-Item "$pkg_src_bin" -ItemType Directory -Force
+        New-Item "$pkg_src_bin" -ItemType Directory -Force | out-null
         Move-Item -Path ".\foobar-*\foo.exe" -Destination "$pkg_src_bin"
 
     # Exit tmp
@@ -57,5 +57,11 @@ IF (!(Test-Path -Path "$pkg_src_cmd"))
 }
 
 echo "Copying into '$pkg_dst_cmd' from '$pkg_src_cmd'"
-Remove-Item -Path "$pkg_dst_cmd" -Recurse -ErrorAction Ignore
+Remove-Item -Path "$pkg_dst_cmd" -Recurse -ErrorAction Ignore | out-null
 Copy-Item -Path "$pkg_src" -Destination "$pkg_dst" -Recurse
+
+# NOTE: DELETE THIS COMMENT IF NOT USED
+# For platforms like node, go, and flutter, which have a full directory
+# structure and their own PATH entry you should use a directory junction rather
+# than copying the directory.
+# New-Item -ItemType Junction -Path "$pkg_dst" -Target "$pkg_src"
